@@ -29,6 +29,7 @@ public class RocketTest {
 
     }
 
+    // This test was added for homework 
     @Test
     public void getTimeLanded() {
         //given

@@ -20,6 +20,7 @@ public class Rocket {
         return y;
     }
 
+    // This method was added for homework
     public double getFlightTime(double time) {
         final double GRAVITY = 9.8;
         double yVelocity = Math.sin(Math.toRadians(angle)) * velocity;

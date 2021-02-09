@@ -1,3 +1,4 @@
+package rosenfeld.scrabble;
 import org.junit.Assert;
 import org.junit.Test;
 public class ScrabbleTest {

@@ -1,3 +1,5 @@
+package rosenfeld.physics;
+
 public class Rocket {
     private double velocity;
     private double angle;

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        alignment="center" hgap="18" vgap="18"
+        fx:controller="rosenfeld.scrabble.ScrabbleController">
+    <padding>
+        <Insets top="25" right="25" bottom="18" left="25"/>
+    </padding>
+
+    <Label text="Word to check:"
+           GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField id="wordField"
+               GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+    <Button text="Check" onAction="#checkDictionary"
+            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+</GridPane>

@@ -1,8 +1,10 @@
 package rosenfeld.physics;
 
 public class Rocket {
-    private double velocity;
-    private double angle;
+    final static double GRAVITY = 9.8;
+    private final double velocity;
+    private final double angle;
+
 
     public Rocket(double velocity, double angle) {
         this.velocity = velocity;
@@ -16,7 +18,6 @@ public class Rocket {
     }
 
     public double getY(double time) {
-        final double GRAVITY = 9.8;
         double yVelocity = Math.sin(Math.toRadians(angle)) * velocity;
         double y = yVelocity * time - 0.5 * GRAVITY * time * time;
         return y;

@@ -14,11 +14,11 @@
 
     <Label text="Word to check:"
            GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-    <TextField id="wordField"
+    <TextField fx:id="wordField"
                GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
     <Button text="Check" onAction="#checkDictionary"
             GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <Label id="trueFalseLabel"
-           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label fx:id="trueFalseLabel"
+           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 </GridPane>

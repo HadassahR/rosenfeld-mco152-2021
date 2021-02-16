@@ -12,12 +12,12 @@ public class ScrabbleController {
     Label trueFalseLabel;
 
     public void checkDictionary(ActionEvent actionEvent) {
-        try {
-            String wordToCheck = wordField.getText();
-            Scrabble scrabble = new Scrabble();
-            trueFalseLabel.setText(String.valueOf(scrabble.checkForWord(wordToCheck)));
-        } catch (Exception exc) {
-            System.out.println("EXCEPTION!");
+        String wordToCheck = wordField.getText();
+        Scrabble scrabble = new Scrabble();
+        if (scrabble.checkForWord(wordToCheck)) {
+            trueFalseLabel.setText("Valid Word");
+        } else {
+            trueFalseLabel.setText("Invalid Word");
         }
     }
 }

@@ -15,26 +15,26 @@
 
     <Label text="Velocity:"
            GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-    <TextField id="velocityField"
+    <TextField fx:id="velocityField"
                GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
     <Label text="Angle:"
            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <TextField id="angleField"
+    <TextField fx:id="angleField"
                GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <Label text="Seconds:"
            GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <TextField id="secondsField"
+    <TextField fx:id="secondsField"
                GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
     <Button text="Calculate" onAction="#calculateRocket"
             GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <Label text="xLabel: "
+    <Label fx:id = "xLabel"
            GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-    <Label text="yLabel: "
+    <Label fx:id = "yLabel"
            GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-    <Label text="flightTimeLabel: "
+    <Label fx:id = "flightTimeLabel"
            GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
 </GridPane>

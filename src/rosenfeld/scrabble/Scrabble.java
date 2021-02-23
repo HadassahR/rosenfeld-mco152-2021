@@ -18,26 +18,23 @@ public class Scrabble {
             while (reader.hasNextLine()) {
                 String word = reader.nextLine();
                 if (word.contains(" ")) {
-                    word = word.substring(0, word.indexOf(" "));
-                    word.trim();
+                    word = word.substring(0, word.indexOf(" ")).trim();
                 }
                 dictionary.add(word);
             }
             reader.close();
         } catch (Exception exc) {
-
+            exc.printStackTrace();
         }
     }
 
     public boolean checkForWord(String word) {
-        boolean found = false;
         word = word.trim();
         for (String str : dictionary) {
             if (str.equalsIgnoreCase(word)) {
-                found = true;
-                break;
+                return true;
             }
         }
-        return found;
+        return false;
     }
 }

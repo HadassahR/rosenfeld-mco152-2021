@@ -10,6 +10,8 @@ public class RocketController {
     TextField velocityField, angleField, secondsField;
     @FXML
     Label xLabel, yLabel, flightTimeLabel;
+    @FXML
+    RocketCanvas rocketCanvas;
 
     public void calculateRocket(ActionEvent actionEvent) {
 
@@ -20,11 +22,13 @@ public class RocketController {
             Rocket rocket = new Rocket(velocity, angle);
             String xLbl = String.format("X: %.2f", rocket.getX(seconds));
             String yLbl = String.format("Y: %.2f", rocket.getY(seconds));
-            String fTLbl = String.format("Flight time: %.2f", rocket.getFlightTime(seconds));
+            String fTLbl = String.format("Flight time: %.2f", rocket.getFlightTime());
 
             xLabel.setText(xLbl);
             yLabel.setText(yLbl);
             flightTimeLabel.setText(fTLbl);
+
+            rocketCanvas.draw(rocket);
 
     }
 }

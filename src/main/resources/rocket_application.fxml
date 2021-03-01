@@ -27,12 +27,10 @@
 
     <Button text="Calculate" onAction="#calculateRocket"
             GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <Label fx:id = "xLabel"
+
+    <Label fx:id = "locationLabel"
            GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-    <Label fx:id = "yLabel"
-           GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-    <Label fx:id = "flightTimeLabel"
-           GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
     <RocketCanvas fx:id="rocketCanvas"
                   width = "200"
                   height = "200"

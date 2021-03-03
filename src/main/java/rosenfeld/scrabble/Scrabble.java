@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Scrabble {
 
     ArrayList<String> dictionary = new ArrayList<String>();
+    ArrayList<String> definitions = new ArrayList<String>();
 
     public Scrabble() {
         importDictionary();
@@ -16,11 +17,8 @@ public class Scrabble {
             File wordFile = new File("dictionary.txt");
             Scanner reader = new Scanner(wordFile);
             while (reader.hasNextLine()) {
-                String word = reader.nextLine();
-                if (word.contains(" ")) {
-                    word = word.substring(0, word.indexOf(" ")).trim();
-                }
-                dictionary.add(word);
+                dictionary.add(reader.next());
+                definitions.add(reader.nextLine());
             }
             reader.close();
         } catch (Exception exc) {
@@ -36,5 +34,13 @@ public class Scrabble {
             }
         }
         return false;
+    }
+
+    public String getDefinition(String word) {
+        if (checkForWord(word)) {
+            return definitions.get(dictionary.indexOf(word));
+        } else {
+            return "";
+        }
     }
 }

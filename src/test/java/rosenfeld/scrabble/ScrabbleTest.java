@@ -57,4 +57,18 @@ public class ScrabbleTest {
         boolean testWord = test.checkForWord("zoogeographical");
         Assert.assertTrue(testWord);
     }
+
+    @Test
+    public void hasDefinition(){
+        Scrabble test = new Scrabble();
+        String testDef = test.getDefinition("ENJOY");
+        Assert.assertEquals(" to receive pleasure from [v -ED, -ING, -S]", testDef);
+    }
+
+    @Test
+    public void doesNotHaveDefinition(){
+        Scrabble test = new Scrabble();
+        String testDef = test.getDefinition("Hadassah");
+        Assert.assertEquals("", testDef);
+    }
 }

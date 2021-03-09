@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.*?>
+<GridPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        alignment="center" hgap="18" vgap="18"
+        fx:controller="rosenfeld.scrabble.BananagramsController">
+    <padding>
+        <Insets top="25" right="25" bottom="18" left="25"/>
+    </padding>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="BananagramsApplication"
-            prefHeight="400.0" prefWidth="600.0">
+    <Label fx:id = "blank1"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: white"
+           GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label fx:id = "blank2"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: white"
+           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label fx:id = "blank3"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: white"
+           GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    <Label fx:id = "blank4"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: white"
+           GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+    <Label fx:id = "blank5"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: white"
+           GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+    <Label fx:id = "blank6"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: white"
+           GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+    <Label fx:id = "blank7"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: white"
+           GridPane.columnIndex="6" GridPane.rowIndex="0"/>
 
-</AnchorPane>
+    <Button text="Submit"
+            GridPane.columnIndex="7" GridPane.rowIndex="0"/>
+    <Button text="Clear"
+            GridPane.columnIndex="7" GridPane.rowIndex="1"/>
+    <Label text="x Points"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8"
+           GridPane.columnIndex="7" GridPane.rowIndex="2"/>
+
+    <Label fx:id = "let1" text = "A"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: #91c5db"
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label fx:id = "let2" text = "B"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: #91c5db"
+           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label fx:id = "let3" text = "C"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: #91c5db"
+           GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <Label fx:id = "let4" text = "D"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: #91c5db"
+           GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    <Label fx:id = "let5" text = "E"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: #91c5db"
+           GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+    <Label fx:id = "let6" text = "F"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: #91c5db"
+           GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+    <Label fx:id = "let7" text = "G"
+           style="-fx-border: 1; -fx-border-color:black; -fx-border-style: solid; -fx-padding: 8 8 8 8; -fx-background-color: #91c5db"
+           GridPane.columnIndex="6" GridPane.rowIndex="2"/>
+
+</GridPane>

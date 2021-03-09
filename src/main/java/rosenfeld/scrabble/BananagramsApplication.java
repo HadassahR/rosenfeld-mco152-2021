@@ -11,7 +11,7 @@ public class BananagramsApplication extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/bananagrams_application.fxml"));
 
-        Scene scene = new Scene(root, 300, 275);
+        Scene scene = new Scene(root, 500, 275);
 
         stage.setTitle("Bananagrams");
         stage.setScene(scene);

@@ -1,6 +1,8 @@
 package rosenfeld.scrabble;
 
-public class BananagramsController
-{
+import javafx.scene.control.Label;
 
+public class BananagramsController {
+
+    public Label blank1;
 }

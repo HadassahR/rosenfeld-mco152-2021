@@ -1,12 +1,13 @@
 package rosenfeld.scrabble;
+
 import java.io.File;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Scrabble {
 
-    ArrayList<String> dictionary = new ArrayList<String>();
-    ArrayList<String> definitions = new ArrayList<String>();
+   private final Map<String, String> wordsToDefinitions = new HashMap<>();
 
     public Scrabble() {
         importDictionary();
@@ -16,9 +17,11 @@ public class Scrabble {
         try {
             File wordFile = new File("dictionary.txt");
             Scanner reader = new Scanner(wordFile);
-            while (reader.hasNextLine()) {
-                dictionary.add(reader.next());
-                definitions.add(reader.nextLine());
+            while (reader.hasNext()) {
+                wordsToDefinitions.put(
+                        reader.next(), //key
+                        reader.nextLine().trim() //value
+                );
             }
             reader.close();
         } catch (Exception exc) {
@@ -27,20 +30,15 @@ public class Scrabble {
     }
 
     public boolean checkForWord(String word) {
-        word = word.trim();
-        for (String str : dictionary) {
-            if (str.equalsIgnoreCase(word)) {
-                return true;
-            }
-        }
-        return false;
+        return wordsToDefinitions.containsKey(word.toUpperCase().trim());
     }
 
     public String getDefinition(String word) {
-        if (checkForWord(word)) {
-            return definitions.get(dictionary.indexOf(word));
-        } else {
-            return "";
-        }
+        String definition = wordsToDefinitions.get(word.toUpperCase().trim());
+        return definition == null ? "" : definition;
+    }
+
+    public int size() {
+        return wordsToDefinitions.size();
     }
 }

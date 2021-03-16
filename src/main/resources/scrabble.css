@@ -1,0 +1,20 @@
+Label {
+    -fx-border: 1;
+    -fx-min-width: 35;
+    -fx-text-alignment: center;
+    -fx-min-height: 50;
+    -fx-border-color:black;
+    -fx-border-style: solid;
+    -fx-padding: 8 8 8 8;
+    -fx-background-color: #3291a8;
+    }
+
+Label.points {
+    -fx-border: 3;
+    -fx-min-height: 30;
+    -fx-background-color: white;
+}
+
+Text {
+-fx-color: red;
+}

@@ -1,3 +1,4 @@
+
 package rosenfeld.scrabble;
 
 import javafx.application.Application;
@@ -9,11 +10,11 @@ import javafx.stage.Stage;
 public class ScrabbleApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../../../resources/scrabble_application.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/scrabble_application.fxml"));
 
-        Scene scene = new Scene(root, 300, 275);
+        Scene scene = new Scene(root, 800, 300);
 
-        stage.setTitle("Scrabble Word Checker");
+        stage.setTitle("Scrabble Application");
         stage.setScene(scene);
         stage.show();
     }

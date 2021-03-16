@@ -3,22 +3,58 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.util.ArrayList?>
 <GridPane
         xmlns="http://javafx.com/javafx"
         xmlns:fx="http://javafx.com/fxml"
         alignment="center" hgap="18" vgap="18"
+        stylesheets="@scrabble.css"
+        prefHeight="400.0" prefWidth="600.0"
         fx:controller="rosenfeld.scrabble.ScrabbleController">
     <padding>
         <Insets top="25" right="25" bottom="18" left="25"/>
     </padding>
 
-    <Label text="Word to check:"
-           GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-    <TextField fx:id="wordField"
-               GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label fx:id="tile0" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label fx:id="tile1" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label fx:id="tile2" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    <Label fx:id="tile3" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+    <Label fx:id="tile4" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+    <Label fx:id="tile5" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+    <Label fx:id="tile6" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
 
-    <Button text="Check" onAction="#checkDictionary"
-            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <Label fx:id="trueFalseLabel"
-           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Button text="Submit" onAction="#submitWord" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+    <Button text="Clear" onAction="#clearTiles" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+    <Label text="x Points" fx:id="points" styleClass="points" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+    <Text fx:id="valid" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+
+    <Label fx:id="letter0" onMouseClicked="#onLetterClicked" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label fx:id="letter1" onMouseClicked="#onLetterClicked" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label fx:id="letter2" onMouseClicked="#onLetterClicked" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <Label fx:id="letter3" onMouseClicked="#onLetterClicked" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    <Label fx:id="letter4" onMouseClicked="#onLetterClicked" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+    <Label fx:id="letter5" onMouseClicked="#onLetterClicked" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+    <Label fx:id="letter6" onMouseClicked="#onLetterClicked" GridPane.columnIndex="6" GridPane.rowIndex="2"/>
+
+    <fx:define>
+        <ArrayList fx:id="blankTiles">
+            <fx:reference source="tile0"/>
+            <fx:reference source="tile1"/>
+            <fx:reference source="tile2"/>
+            <fx:reference source="tile3"/>
+            <fx:reference source="tile4"/>
+            <fx:reference source="tile5"/>
+            <fx:reference source="tile6"/>
+        </ArrayList>
+        <ArrayList fx:id="letterTiles">
+            <fx:reference source="letter0"/>
+            <fx:reference source="letter1"/>
+            <fx:reference source="letter2"/>
+            <fx:reference source="letter3"/>
+            <fx:reference source="letter4"/>
+            <fx:reference source="letter5"/>
+            <fx:reference source="letter6"/>
+        </ArrayList>
+    </fx:define>
 </GridPane>

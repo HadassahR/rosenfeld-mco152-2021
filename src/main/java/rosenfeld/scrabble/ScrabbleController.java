@@ -65,6 +65,7 @@ public class ScrabbleController {
     }
 
     public void submitWord(ActionEvent actionEvent) {
+        valid.setText("");
         StringBuilder word = new StringBuilder();
         for (Label let : blankTiles) {
             word.append(let.getText());
@@ -123,13 +124,12 @@ public class ScrabbleController {
             case 7:
                 score += 13;
         }
-        points.setText(String.valueOf(score));
+        points.setText("Points: " + String.valueOf(score));
     }
 
 
     public void clearTiles(ActionEvent actionEvent) {
-        for (Label tile : blankTiles) {
-            tile.setText("");
-        }
+        returnLetters();
+        clear();
     }
 }

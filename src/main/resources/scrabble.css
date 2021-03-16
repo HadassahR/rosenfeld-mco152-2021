@@ -7,6 +7,7 @@ Label {
     -fx-border-style: solid;
     -fx-padding: 8 8 8 8;
     -fx-background-color: #3291a8;
+    -fx-alignment: center;
     }
 
 Label.points {
@@ -15,6 +16,6 @@ Label.points {
     -fx-background-color: white;
 }
 
-Text {
--fx-color: red;
+Label.clickable {
+    -fx-border-color: white;
 }

@@ -24,18 +24,27 @@
     <Label fx:id="tile5" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
     <Label fx:id="tile6" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
 
-    <Button text="Submit" onAction="#submitWord" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
-    <Button text="Clear" onAction="#clearTiles" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
-    <Label text="x Points" fx:id="points" styleClass="points" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+    <Button text="SUBMIT" onAction="#submitWord" GridPane.columnIndex="0" GridPane.rowIndex="1"
+            GridPane.columnSpan="2"/>
+    <Button text="CLEAR" onAction="#clearTiles" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+    <Label text="POINTS" fx:id="Points:" styleClass="points" GridPane.columnIndex="4" GridPane.rowIndex="1"
+           GridPane.columnSpan="2"/>
     <Text fx:id="valid" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
 
-    <Label fx:id="letter0" onMouseClicked="#onLetterClicked" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <Label fx:id="letter1" onMouseClicked="#onLetterClicked" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <Label fx:id="letter2" onMouseClicked="#onLetterClicked" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-    <Label fx:id="letter3" onMouseClicked="#onLetterClicked" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-    <Label fx:id="letter4" onMouseClicked="#onLetterClicked" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
-    <Label fx:id="letter5" onMouseClicked="#onLetterClicked" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
-    <Label fx:id="letter6" onMouseClicked="#onLetterClicked" GridPane.columnIndex="6" GridPane.rowIndex="2"/>
+    <Label fx:id="letter0" onMouseClicked="#onLetterClicked" styleClass="clickable" GridPane.columnIndex="0"
+           GridPane.rowIndex="2"/>
+    <Label fx:id="letter1" onMouseClicked="#onLetterClicked" styleClass="clickable" GridPane.columnIndex="1"
+           GridPane.rowIndex="2"/>
+    <Label fx:id="letter2" onMouseClicked="#onLetterClicked" styleClass="clickable" GridPane.columnIndex="2"
+           GridPane.rowIndex="2"/>
+    <Label fx:id="letter3" onMouseClicked="#onLetterClicked" styleClass="clickable" GridPane.columnIndex="3"
+           GridPane.rowIndex="2"/>
+    <Label fx:id="letter4" onMouseClicked="#onLetterClicked" styleClass="clickable" GridPane.columnIndex="4"
+           GridPane.rowIndex="2"/>
+    <Label fx:id="letter5" onMouseClicked="#onLetterClicked" styleClass="clickable" GridPane.columnIndex="5"
+           GridPane.rowIndex="2"/>
+    <Label fx:id="letter6" onMouseClicked="#onLetterClicked" styleClass="clickable" GridPane.columnIndex="6"
+           GridPane.rowIndex="2"/>
 
     <fx:define>
         <ArrayList fx:id="blankTiles">

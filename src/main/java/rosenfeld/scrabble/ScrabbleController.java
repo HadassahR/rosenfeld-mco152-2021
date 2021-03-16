@@ -43,7 +43,7 @@ public class ScrabbleController {
         Label label = (Label) mouseEvent.getSource();
         String letter = label.getText();
         for (Label tile : blankTiles){
-            if (tile.getText().equals("")){
+            if ("".equals(tile.getText())){
                 tile.setText(letter);
                 label.setText("");
                 break;
@@ -56,7 +56,7 @@ public class ScrabbleController {
         Label label = (Label) mouseEvent.getSource();
         String letter = label.getText();
         for (Label tile : letterTiles) {
-            if (tile.getText().equals("")){
+            if ("".equals(tile.getText())){
                 tile.setText(letter);
                 label.setText("");
                 break;
@@ -64,7 +64,7 @@ public class ScrabbleController {
         }
     }
 
-    public void submitWord(ActionEvent actionEvent) {
+    public void submitWord() {
         valid.setText("");
         StringBuilder word = new StringBuilder();
         for (Label let : blankTiles) {
@@ -92,7 +92,7 @@ public class ScrabbleController {
 
     private void toEmptyTile(String text) {
         for (Label letter : letterTiles) {
-            if (letter.getText().equals("")){
+            if ("".equals(letter.getText())){
                 letter.setText(text);
                 break;
             }

@@ -27,7 +27,7 @@
     <Button text="SUBMIT" onAction="#submitWord" GridPane.columnIndex="0" GridPane.rowIndex="1"
             GridPane.columnSpan="2"/>
     <Button text="CLEAR" onAction="#clearTiles" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
-    <Label text="POINTS" fx:id="Points:" styleClass="points" GridPane.columnIndex="4" GridPane.rowIndex="1"
+    <Label text="Points: " fx:id="points" styleClass="points" GridPane.columnIndex="4" GridPane.rowIndex="1"
            GridPane.columnSpan="2"/>
     <Text fx:id="valid" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
 

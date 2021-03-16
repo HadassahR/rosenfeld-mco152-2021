@@ -9,17 +9,18 @@ import java.util.List;
 
 public class ScrabbleController {
 
-    public Text valid;
+    @FXML
+    private Text valid;
     private Letterbag letterBag = new Letterbag();
     private Scrabble dictionary;
     private int score = 0;
 
     @FXML
-    public Label points;
+    private Label points;
     @FXML
-    List<Label> blankTiles;
+    private List<Label> blankTiles;
     @FXML
-    List<Label> letterTiles;
+    private List<Label> letterTiles;
 
 
     public ScrabbleController() {

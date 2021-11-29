@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Scrabble {
 
-   private final Map<String, String> wordsToDefinitions = new HashMap<>();
+    private final Map<String, String> wordsToDefinitions = new HashMap<>();
 
     public Scrabble() {
         importDictionary();
@@ -38,6 +38,9 @@ public class Scrabble {
         return definition == null ? "" : definition;
     }
 
+    public Map<String, String> getWordsToDefinitions() {
+        return wordsToDefinitions;
+    }
     public int size() {
         return wordsToDefinitions.size();
     }

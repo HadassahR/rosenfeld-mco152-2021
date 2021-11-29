@@ -62,7 +62,7 @@ public class ScrabbleTest {
     public void hasDefinition(){
         Scrabble test = new Scrabble();
         String testDef = test.getDefinition("ENJOY");
-        Assert.assertEquals(" to receive pleasure from [v -ED, -ING, -S]", testDef);
+        Assert.assertEquals("to receive pleasure from [v -ED, -ING, -S]", testDef);
     }
 
     @Test

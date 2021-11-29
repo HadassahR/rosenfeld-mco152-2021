@@ -11,8 +11,8 @@ public class ScrabbleController {
 
     @FXML
     private Text valid;
-    private Letterbag letterBag = new Letterbag();
-    private Scrabble dictionary;
+    private final Letterbag letterBag;
+    private final Scrabble dictionary;
     private int score = 0;
 
     @FXML
@@ -20,15 +20,14 @@ public class ScrabbleController {
     @FXML
     private List<Label> blankTiles;
     @FXML
-    private List<Label> letterTiles;
+    List<Label> letterTiles;
 
 
-    public ScrabbleController() {
-        try {
-            dictionary = new Scrabble();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public ScrabbleController(
+            Scrabble dictionary,
+            Letterbag letterBag) {
+        this.dictionary = dictionary;
+        this.letterBag = letterBag;
     }
 
     @FXML

@@ -1,4 +1,3 @@
-
 package rosenfeld.scrabble;
 
 import javafx.application.Application;
@@ -10,11 +9,17 @@ import javafx.stage.Stage;
 public class ScrabbleApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/scrabble_application.fxml"));
+        Scrabble dictionary = new Scrabble();
+        Letterbag letterBag = new Letterbag();
+        ScrabbleController controller = new ScrabbleController(dictionary, letterBag);
 
-        Scene scene = new Scene(root, 600, 300);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/scrabble_application.fxml"));
+        loader.setController(controller);
 
-        stage.setTitle("Scrabble Application");
+        Parent parent = loader.load();
+        Scene scene = new Scene(parent, 350, 150);
+
+        stage.setTitle("Scrabble");
         stage.setScene(scene);
         stage.show();
     }

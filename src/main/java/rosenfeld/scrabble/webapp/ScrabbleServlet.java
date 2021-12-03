@@ -30,6 +30,7 @@ public class ScrabbleServlet extends HttpServlet {
         String word = request.getParameter("inputWord");
         String definition = scrabble.getDefinition(word);
         String json = gson.toJson(definition);
+
         out.println(json);
     }
 }

@@ -1,9 +1,9 @@
 import org.junit.Test
+import rosenfeld.scrabble.webapp.DictionaryServlet
 
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-import static org.mockito.ArgumentMatchers.anyString
 import static org.mockito.Mockito.*
 
 class ScrabbleServletTest {
@@ -12,10 +12,11 @@ class ScrabbleServletTest {
     public void doGet() throws IOException {
 
         // given
-        DicationaryServlet servlet = new DictionaryServlet();
+        DictionaryServlet servlet = new DictionaryServlet();
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
         PrintWriter out = mock(PrintWriter.class);
+        String expectedDefinition = "a trodden way or track [n -S]";
 
         doReturn(out).when(response).getWriter();
         doReturn("PATH").when(request).getParameter("inputWord");
@@ -24,6 +25,6 @@ class ScrabbleServletTest {
         servlet.doGet(request, response);
 
         // then
-        verify(out).println("a trodden way or track [n -S]");
+        verify(out).println(expectedDefinition);
     }
 }

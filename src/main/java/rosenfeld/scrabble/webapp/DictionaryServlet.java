@@ -23,7 +23,7 @@ public class DictionaryServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
         String word = request.getParameter("inputWord");
-        String definition = scrabble.getDefinition(word);
+        String definition = dictionary.get(word);
 
         out.println(definition);
     }

@@ -1,7 +1,7 @@
 package rosenfeld.scrabble.webapp;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import rosenfeld.scrabble.DictionaryService;
 import rosenfeld.scrabble.Scrabble;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,14 +10,14 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 public class DictionaryServlet extends HttpServlet {
-    private final Gson gson;
     private final Map<String, String> dictionary;
+    private final DictionaryService service;
     private final Scrabble scrabble;
 
-    public DictionaryServlet() {
-        gson = new GsonBuilder().setPrettyPrinting().create();
+    public DictionaryServlet() throws IOException {
         scrabble = new Scrabble();
-        dictionary = scrabble.getWordsToDefinitions();
+        service = new DictionaryService();
+        dictionary = service.dictionary();
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

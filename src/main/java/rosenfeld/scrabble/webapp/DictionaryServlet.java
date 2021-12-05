@@ -12,13 +12,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 
-public class ScrabbleServlet extends HttpServlet {
+public class DictionaryServlet extends HttpServlet {
     private final Gson gson;
     private final Map<String, String> dictionary;
     private final Letterbag letterbag;
     private final Scrabble scrabble;
 
-    public ScrabbleServlet () throws IOException {
+    public DictionaryServlet() throws IOException {
         gson = new GsonBuilder().setPrettyPrinting().create();
         letterbag = new Letterbag();
         scrabble = new Scrabble();
@@ -29,8 +29,8 @@ public class ScrabbleServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String word = request.getParameter("inputWord");
         String definition = scrabble.getDefinition(word);
-        String json = gson.toJson(definition);
+//        String json = gson.toJson(definition);
 
-        out.println(json);
+        out.println(definition);
     }
 }

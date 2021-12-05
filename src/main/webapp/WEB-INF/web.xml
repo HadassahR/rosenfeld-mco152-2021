@@ -10,14 +10,14 @@
 
 
     <servlet>
-        <display-name>ScrabbleServlet</display-name>
-        <servlet-name>ScrabbleServlet</servlet-name>
-        <servlet-class>rosenfeld.scrabble.webapp.ScrabbleServlet</servlet-class>
+        <display-name>DictionaryServlet</display-name>
+        <servlet-name>DictionaryServlet</servlet-name>
+        <servlet-class>rosenfeld.scrabble.webapp.DictionaryServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>ScrabbleServlet</servlet-name>
-        <url-pattern>/scrabble</url-pattern>
+        <servlet-name>DictionaryServlet</servlet-name>
+        <url-pattern>/dictionary</url-pattern>
     </servlet-mapping>
 
 </web-app>

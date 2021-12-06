@@ -15,9 +15,9 @@ public class DictionaryServlet extends HttpServlet {
     private final Scrabble scrabble;
 
     public DictionaryServlet() throws IOException {
-        scrabble = new Scrabble();
         service = new DictionaryService();
-        dictionary = service.dictionary();
+        scrabble = new Scrabble();
+        dictionary = service.createDictionaryMap();
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

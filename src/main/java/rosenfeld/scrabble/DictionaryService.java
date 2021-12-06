@@ -1,46 +1,41 @@
 package rosenfeld.scrabble;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
 public class DictionaryService {
 
-    public Map<String, String> dictionary () throws IOException {
+    public Map<String, String> createDictionaryMap() throws IOException {
         Map<String, String> dictionaryMap = new HashMap<>();
+        InputStream in;
         BufferedReader reader = null;
 
         try {
-            File file = new File("dictionary.txt");
-            reader = new BufferedReader(new FileReader(file));
-            String line = null;
+            in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
+            reader = new BufferedReader(new InputStreamReader(in));
 
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(" ");
-
-                String word = parts[0].trim();
-                String definition = parts[1].trim();
-
-                if (!word.equals("") && !definition.equals("")){
-                    dictionaryMap.put(word, definition);
-                }
+            while (reader.ready()){
+                String line = reader.readLine();
+                String word = line.substring(0, line.indexOf(" "));
+                String definition = line.substring(line.indexOf(" "));
+                dictionaryMap.put(word, definition);
             }
+                reader.close();
         }
         catch (Exception exc)
         {
+//            dictionaryMap.put("Error", "true");
             exc.printStackTrace();
         }
         finally
         {
+//            dictionaryMap.put("finally", "complete");
             if (reader != null) {
-                try {
-                    reader.close();
-                }
-                catch (Exception exc) {
-                };
+                reader.close();
             }
         }
         return dictionaryMap;

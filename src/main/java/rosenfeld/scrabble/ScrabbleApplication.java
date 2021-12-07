@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class ScrabbleApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Scrabble dictionary = new Scrabble();
+        Dictionary dictionary = new Dictionary();
         Letterbag letterBag = new Letterbag();
         ScrabbleController controller = new ScrabbleController(dictionary, letterBag);
 

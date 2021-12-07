@@ -9,35 +9,30 @@ import java.util.Map;
 
 public class DictionaryService {
 
-    public Map<String, String> createDictionaryMap() throws IOException {
-        Map<String, String> dictionaryMap = new HashMap<>();
-        InputStream in;
-        BufferedReader reader = null;
+    private Map<String, String> dictionary;
+
+    public DictionaryService () throws IOException {
+        dictionary = new HashMap<>();
 
         try {
-            in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
-            reader = new BufferedReader(new InputStreamReader(in));
+            InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-            while (reader.ready()){
+            while (reader.readLine() != null) {
                 String line = reader.readLine();
                 String word = line.substring(0, line.indexOf(" "));
-                String definition = line.substring(line.indexOf(" "));
-                dictionaryMap.put(word, definition);
+                String definition = line.substring(line.indexOf(" ")).trim();
+                dictionary.put(word, definition);
             }
-                reader.close();
+            reader.close();
         }
         catch (Exception exc)
         {
-//            dictionaryMap.put("Error", "true");
             exc.printStackTrace();
         }
-        finally
-        {
-//            dictionaryMap.put("finally", "complete");
-            if (reader != null) {
-                reader.close();
-            }
-        }
-        return dictionaryMap;
+    }
+
+    public String getDefinition (String word) {
+        return dictionary.getOrDefault(word, "Invalid word");
     }
 }

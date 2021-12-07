@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 import static org.mockito.Mockito.*;
 
-public class DictionaryControllerTest {
+public class ScrabbleControllerTest {
 
     @BeforeClass
     public static void beforeClass() {

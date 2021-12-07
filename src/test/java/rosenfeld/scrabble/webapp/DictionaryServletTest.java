@@ -1,12 +1,15 @@
-import org.junit.Test
-import rosenfeld.scrabble.webapp.DictionaryServlet
+package rosenfeld.scrabble.webapp;
 
-import javax.servlet.http.HttpServletRequest
-import javax.servlet.http.HttpServletResponse
+import org.junit.Test;
 
-import static org.mockito.Mockito.*
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-class DictionaryServletTest {
+import static org.mockito.Mockito.*;
+
+public class DictionaryServletTest {
 
     @Test
     public void doGet() throws IOException {

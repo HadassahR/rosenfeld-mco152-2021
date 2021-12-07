@@ -16,20 +16,14 @@ public class Dictionary {
     }
 
     public Dictionary (BufferedReader reader) throws IOException {
-        try {
-            while (reader.readLine() != null) {
-                String line = reader.readLine();
-                String word = line.substring(0, line.indexOf(" "));
-                String definition = line.substring(line.indexOf(" ")).trim();
-                wordsToDefinitions.put(word, definition);
-            }
-            reader.close();
+
+        while ((reader.readLine() != null)) {
+            String line = reader.readLine();
+            int index = line.indexOf(" ");
+            String word = index == -1 ? line : line.substring(0, index);
+            String definition = index > -1 ? line.substring(index + 1) : null;
+            wordsToDefinitions.put(word, definition);
         }
-        catch (Exception exc)
-        {
-            exc.printStackTrace();
-        }
-        reader.close();
     }
 
     private void importDictionary() {

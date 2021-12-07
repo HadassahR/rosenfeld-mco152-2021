@@ -31,6 +31,7 @@ public class DictionaryServletTest {
         verify(out).println(expectedDefinition);
     }
 
+    @Test
     public void invalid_doGet() throws IOException {
 
         // given

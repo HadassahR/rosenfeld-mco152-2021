@@ -12,7 +12,7 @@ public class ScrabbleController {
     @FXML
     private Text valid;
     private final Letterbag letterBag;
-    private final Scrabble dictionary;
+    private final Dictionary dictionary;
     private int score = 0;
 
     @FXML
@@ -24,7 +24,7 @@ public class ScrabbleController {
 
 
     public ScrabbleController(
-            Scrabble dictionary,
+            Dictionary dictionary,
             Letterbag letterBag) {
         this.dictionary = dictionary;
         this.letterBag = letterBag;

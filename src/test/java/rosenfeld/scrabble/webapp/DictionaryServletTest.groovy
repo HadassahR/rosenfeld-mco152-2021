@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse
 
 import static org.mockito.Mockito.*
 
-class ScrabbleServletTest {
+class DictionaryServletTest {
 
     @Test
     public void doGet() throws IOException {

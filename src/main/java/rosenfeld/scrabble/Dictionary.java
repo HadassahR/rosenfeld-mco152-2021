@@ -1,16 +1,35 @@
 package rosenfeld.scrabble;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Scrabble {
+public class Dictionary {
 
     private final Map<String, String> wordsToDefinitions = new HashMap<>();
 
-    public Scrabble() {
+    public Dictionary() {
         importDictionary();
+    }
+
+    public Dictionary (BufferedReader reader) throws IOException {
+        try {
+            while (reader.readLine() != null) {
+                String line = reader.readLine();
+                String word = line.substring(0, line.indexOf(" "));
+                String definition = line.substring(line.indexOf(" ")).trim();
+                wordsToDefinitions.put(word, definition);
+            }
+            reader.close();
+        }
+        catch (Exception exc)
+        {
+            exc.printStackTrace();
+        }
+        reader.close();
     }
 
     private void importDictionary() {

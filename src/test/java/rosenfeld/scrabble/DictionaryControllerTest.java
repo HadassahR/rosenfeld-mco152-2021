@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 import static org.mockito.Mockito.*;
 
-public class ScrabbleControllerTest {
+public class DictionaryControllerTest {
 
     @BeforeClass
     public static void beforeClass() {
@@ -19,7 +19,7 @@ public class ScrabbleControllerTest {
     public void initialize() {
         // given
         Letterbag letterBag = mock(Letterbag.class);
-        Scrabble dictionary = mock(Scrabble.class);
+        Dictionary dictionary = mock(Dictionary.class);
         ScrabbleController controller = new ScrabbleController(dictionary, letterBag);
         controller.letterTiles = Arrays.asList(
                 mock(Label.class),

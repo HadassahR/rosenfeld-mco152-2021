@@ -4,35 +4,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
 
 public class DictionaryService {
 
-    private Map<String, String> dictionary;
+    private Dictionary dictionary;
 
     public DictionaryService () throws IOException {
-        dictionary = new HashMap<>();
-
-        try {
-            InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
-            while (reader.readLine() != null) {
-                String line = reader.readLine();
-                String word = line.substring(0, line.indexOf(" "));
-                String definition = line.substring(line.indexOf(" ")).trim();
-                dictionary.put(word, definition);
-            }
-            reader.close();
+        InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
+        BufferedReader reader = null;
+        if (in != null) {
+            reader = new BufferedReader(new InputStreamReader(in));
         }
-        catch (Exception exc)
-        {
-            exc.printStackTrace();
-        }
+        dictionary = new Dictionary (reader);
     }
 
-    public String getDefinition (String word) {
-        return dictionary.getOrDefault(word, "Invalid word");
+    public Dictionary getDictionary () {
+        return this.dictionary;
     }
+
 }
